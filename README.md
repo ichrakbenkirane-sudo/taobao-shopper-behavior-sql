@@ -54,6 +54,23 @@ These are hypotheses suggested by the data; testing them would need experiments 
 - No price, product name, or demographic data (category IDs are anonymized).
 - The analysis describes behavior; it cannot show what causes it.
 
+- ## Power BI dashboard
+A two-page report built on four small summary tables that `export_powerbi_data.py` creates from the SQL results.
+- **Page 1:** conversion cards, funnel, purchases by hour, top 10 categories, key insights.
+- **Page 2:** purchases per day and conversion per day.
+
+DAX measures: Total Views, Total Cart Adds, Total Purchases, View to Cart Rate, Cart to Purchase Rate, Overall Conversion, Daily Purchases, Daily Conversion.
+
+Page 2 finding: daily purchases stayed between 201K and 227K until Dec 1, then rose to 258K on Dec 2-3, while daily conversion fell from 2.51% (Nov 27) to about 2.1%. Traffic grew faster than sales on those days. A possible cause is the build-up to the Double 12 festival, which is a hypothesis this data cannot confirm.
+
+## Files
+- `full_analysis.py`: SQL (DuckDB) analysis of all 100M rows
+- `analysis.py`: earlier analysis of a 2M-row sample
+- `export_powerbi_data.py`: creates the `pbi_*.csv` summary tables
+- `pbi_*.csv`: the four tables used by the dashboard
+- `taobao_dashboard.pbix`: the Power BI file (open with Power BI Desktop)
+- `dashboard_page1.png`, `dashboard_page2.png`: dashboard screenshots
+
 ## How to run
 1. Download UserBehavior.csv from Kaggle ("User Behavior Data from Taobao for Recommendation") and put it in the same folder as the scripts.
 2. Install the libraries: `pip install duckdb pandas matplotlib`
