@@ -1,5 +1,9 @@
 # Taobao Shopper Behavior Analysis (SQL + Python)
 
+## Dashboard (Power BI)
+![Dashboard page 1](dashboard_page1.png)
+![Daily trend page](dashboard_page2.png)
+
 ## Project Question
 Where do Taobao shoppers drop off between viewing a product and buying it, and what do buyers do differently?
 
